@@ -13,7 +13,7 @@ all : insc_jvm insc_llvm
 	alex -g $<
 
 generate_grama:
-	bnfc -m Instant.cf -o $(GRAMA_FOLDER)
+	bnfc -m $(SRC_FOLDER)/Instant.cf -o $(GRAMA_FOLDER)
 
 insc_jvm : $(PARSER_FILES) generate_grama
 	ghc -i$(SRC_FOLDER):$(GRAMA_FOLDER) --make $(SRC_FOLDER)/parse.hs $(SRC_FOLDER)/insc_jvm.hs $(SRC_FOLDER)/jvm.hs $(PARSER_FILES) -o $@
