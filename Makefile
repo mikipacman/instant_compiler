@@ -15,10 +15,10 @@ all : insc_jvm insc_llvm
 generate_grama:
 	bnfc -m $(SRC_FOLDER)/Instant.cf -o $(GRAMA_FOLDER)
 
-insc_jvm : $(PARSER_FILES) generate_grama
+insc_jvm : $(PARSER_FILES)
 	ghc -i$(SRC_FOLDER):$(GRAMA_FOLDER) --make $(SRC_FOLDER)/parse.hs $(SRC_FOLDER)/insc_jvm.hs $(SRC_FOLDER)/jvm.hs $(PARSER_FILES) -o $@
 
-insc_llvm : $(PARSER_FILES) generate_grama
+insc_llvm : $(PARSER_FILES)
 	ghc -i$(SRC_FOLDER):$(GRAMA_FOLDER) --make $(SRC_FOLDER)/parse.hs $(SRC_FOLDER)/insc_llvm.hs $(SRC_FOLDER)/llvm.hs $(PARSER_FILES) -o $@
 
 clean :

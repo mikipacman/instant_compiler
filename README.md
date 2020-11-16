@@ -12,3 +12,7 @@ W katalogu `lib` znajdują się pliki:
 - `jasmin.jar` - służy do kompliacji pliku jasmin'owego
 - `runtime.bc` - skompilowane funkcje pomocniczne dla LLVM, między innymi `printInt`
 
+## Katalogi
+- `lib` - zawiera pomocniczne biblioteki
+- `grama` - zawiera pliki wygenerowane przez `bnfc` dla pliku `Instant.cf`
+- `src` - zawiera pliki źródłowe
