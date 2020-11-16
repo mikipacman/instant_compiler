@@ -56,7 +56,7 @@ compileS s = case s of
     SExp e -> do
         (newIns, stack) <- compileE e
         appendStringInstr newIns
-        appendStringInstr ["getstatic java/lang/System/out Ljava/io/PrintStream;"] -- TODO Optimize stack
+        appendStringInstr ["getstatic java/lang/System/out Ljava/io/PrintStream;"]
         appendStringInstr ["swap"]
         appendStringInstr ["invokevirtual java/io/PrintStream/println(I)V"]
         (symTab, ins, ml, ms) <- get
